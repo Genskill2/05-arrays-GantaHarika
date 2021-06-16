@@ -29,7 +29,7 @@ int max(int arr[], int count){
 //average function
 float average(int arr[], int count){
   float avg,sum = 0.0;
-  for(int i=0; i<count; i++){
+  for(int i=0;i<count;i++){
     sum += arr[i];
   }
   avg = sum/count;
@@ -75,5 +75,5 @@ for (int i=2;i<=num;i++) {
 			}	          	
 		}
    }
-  return arr[],count;
+  return count;
 }
