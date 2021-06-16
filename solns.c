@@ -17,7 +17,7 @@ int max(int arr[], int count){
   return max;
        }
 // min function
-     int min( int arr[], int count){
+int min( int arr[], int count){
   int min = arr[0];
   for(int i=1; i<count; i++){
     if(arr[i]<min) {
@@ -37,14 +37,15 @@ float average(int arr[], int count){
 }
 // mode function
 int mode(int arr[], int n){
-int len,counts[len],Max,Mode,max=arr[0];
+int len=0,counts[len],Max=0,Mode=0,max=arr[0];
  for(int i=1; i<n; i++){
     if(arr[i]> max) {
       max = arr[i];
     }
+ }
 	 len = max+1;
-	 for(int i=0;i<len;i++) {
-		 counts[i]=0;
+	 for(int h=0;h<len;h++) {
+		 counts[h]=0;
 	 }
 	 for(int j=0;j<n;j++) {
 		 counts[arr[j]]++;
@@ -61,22 +62,13 @@ int len,counts[len],Max,Mode,max=arr[0];
 	 
 //factors function
 int factors(int num, int arr[]){
-  int isPrime,count=0;
-for (int i=2;i<=num;i++) {
-     	if(num%i == 0){
-   			isPrime = 1;
-			for (int j=2;j<=i/2;j++) {
-				if(i % j == 0) {
-					isPrime = 0;
-					break;
-				}
-			} 
-			if(isPrime == 1)
-			{
-			   arr[count] = i;
-        count++;
-			}	          	
-		}
-   }
-  return arr[count],count;
+  int i=0,count=0;
+ for(count = 2; num > 1; count++) {  
+        while(num % count == 0) {
+	    arr[i] = count;
+		i++;
+            num = num / count;  
+        }  
+    }  
+  return arr[i],i;
 }
