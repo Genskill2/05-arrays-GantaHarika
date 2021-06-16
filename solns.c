@@ -37,27 +37,28 @@ float average(int arr[], int count){
 }
 // mode function
 int mode(int arr[], int n){
-  int len,counts[len],Max,max=arr[0];
-  for(int i=1;i<n;i++) {
-    if(arr[i]>max) {
+int len,counts[len],Max,Mode,max=arr[0];
+ for(int i=1; i<count; i++){
+    if(arr[i]> max) {
       max = arr[i];
     }
+	 len = max+1;
+	 for(int i=0;i<len;i++) {
+		 counts[i]=0;
+	 }
+	 for(int j=0;j<n;j++) {
+		 counts[arr[j]]++;
+	 }
+	 Max = counts[0];
+	 for(int k=1;k<n;k++) {
+		  if(counts[k]> Max) {
+                Max = counts[k];
+	        Mode = k;
+    } 
   }
-   len=max+1;
-for(int i=0;i<len;i++) {
-   counts[i] = 0;
-}
-  for(int j=0;j<n;j++) {
-  counts[arr[j]]++;
-  }
-   Max=counts[0];
-   for(int k=1;k<len;k++) {
-    if(counts[k]>Max) {
-      Max = counts[k];
-    }
-  }
-  return Max;
-  }
+	 return Mode;
+ }
+	 
 //factors function
 int factors(int num, int arr[]){
   int isPrime,count=0;
@@ -77,5 +78,5 @@ for (int i=2;i<=num;i++) {
 			}	          	
 		}
    }
-  return count;
+  return arr[count],count;
 }
