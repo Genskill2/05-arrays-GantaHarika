@@ -37,27 +37,19 @@ float average(int arr[], int count){
 }
 // mode function
 int mode(int arr[], int n){
-int len=0,counts[len],Max=0,Mode=0,max=arr[0];
- for(int i=1; i<n; i++){
-    if(arr[i]> max) {
-      max = arr[i];
-    }
- }
-	 len = max+1;
-	 for(int h=0;h<len;h++) {
-		 counts[h]=0;
-	 }
-	 for(int j=0;j<n;j++) {
-		 counts[arr[j]]++;
-	 }
-	 Max = counts[0];
-	 for(int k=1;k<n;k++) {
-		  if(counts[k]> Max) {
-                Max = counts[k];
-	        Mode = k;
-    } 
-  }
-	 return Mode;
+int maxValue = 0, maxCount = 0;
+for (int i = 0; i < n; ++i) {
+      int count = 0;
+  for (int j = 0; j < n; ++j) {
+         if (a[j] == a[i])
+         ++count;
+      }
+    if (count > maxCount) {
+         maxCount = count;
+         maxValue = a[i];
+      }
+   }
+     return maxValue;
  }
 	 
 //factors function
